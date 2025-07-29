@@ -33,6 +33,30 @@ Criação de Script Zsh via Terminal
 *Este script usará o utilitário fzf para seleção interativa { atalho tipo "CTRL + K" }
 *Se não estiver instalado, faça:
 
-          sudo apt install fzf
+    sudo apt install fzf
 
 *Script : deb-uninstaller.zsh
+
+    #!/bin/zsh
+
+    # Verifica se fzf está instalado
+    if ! command -v fzf >/dev/null; then
+      echo " 'fzf' não está instalado. Instale com: sudo apt install fzf"
+      exit 1
+    fi
+
+    echo " Carregando lista de pacotes instalados..."
+
+    # Seleciona pacotes usando fzf (Ctrl+K estilo)
+    pkg=$(dpkg-query -W -f='${binary:Package}\n' | sort | fzf --prompt=" Selection"
+
+    if [[ -z "$pkg" ]]; then
+      echo " Nenhum pacote selecionado. Cancelando".
+      exit 1
+    fi
+
+    echo "\n Pacote selecionado: $pkg"
+
+    # Mostrar localização de arquivos instalados
+    echo "\n Arquivos instalados:"
+    dpkg -L "$pkg"
