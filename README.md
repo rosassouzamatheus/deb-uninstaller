@@ -112,7 +112,7 @@ Criação de Script Zsh via Terminal
        echo " Cancelando."
       fi
 
-# Como utilizar
+# 📥 Como utilizar
 
   1. Salve como deb-uninstaller.zsh
   2. Dê permissão de execução:
@@ -123,7 +123,7 @@ Criação de Script Zsh via Terminal
 
     ./deb-uninstaller.zsh
 
-# Extras (opcionais)
+# 📰 Extras (opcionais)
 
 *Quer integrar ao terminal com um atalho ou comando permanente como removerapp?*
 *Basta adicionar isso ao seu ~/.zshrc:
