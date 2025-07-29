@@ -41,22 +41,22 @@ Criação de Script Zsh via Terminal
 
     # Verifica se fzf está instalado
     if ! command -v fzf >/dev/null; then
-      echo " 'fzf' não está instalado. Instale com: sudo apt install fzf"
+      echo "❌️ 'fzf' não está instalado. Instale com: sudo apt install fzf"
       exit 1
     fi
 
-    echo " Carregando lista de pacotes instalados..."
+    echo "🔍 Carregando lista de pacotes instalados..."
 
     # Seleciona pacotes usando fzf (Ctrl+K estilo)
-    pkg=$(dpkg-query -W -f='${binary:Package}\n' | sort | fzf --prompt=" Selection"
+    pkg=$(dpkg-query -W -f='${binary:Package}\n' | sort | fzf --prompt="📦 Selection"
 
     if [[ -z "$pkg" ]]; then
-      echo " Nenhum pacote selecionado. Cancelando".
+      echo "❌️ Nenhum pacote selecionado. Cancelando".
       exit 1
     fi
 
-    echo "\n Pacote selecionado: $pkg"
+    echo "\n📦 Pacote selecionado: $pkg"
 
     # Mostrar localização de arquivos instalados
-    echo "\n Arquivos instalados:"
+    echo "\n🗂 Arquivos instalados:"
     dpkg -L "$pkg"
