@@ -1,4 +1,4 @@
-# deb-uninstaller 💻
+# 💻 deb-uninstaller
 
 Criação de Script Zsh via Terminal
 
@@ -15,7 +15,7 @@ Criação de Script Zsh via Terminal
          sudo apt auroremove --purge
          sudo apt clean
 
-# Etapa I : Visão geral do que o script fará
+# 1️⃣ Etapa I : Visão geral do que o script fará
 
   1. Listar pacotes .deb instalados;
   2. O usuário escolhe qual remover { usando fzf ou interface simples };
@@ -28,7 +28,7 @@ Criação de Script Zsh via Terminal
   4. Confirmar e remover o app com apt remove --purge
   5. Executar autoremove e clean
 
-# Pré - requisitos
+# 📑 Pré - requisitos
 
 *Este script usará o utilitário fzf para seleção interativa { atalho tipo "CTRL + K" }
 *Se não estiver instalado, faça:
